@@ -3,7 +3,7 @@
 const Hypercore = require('hypercore')
 const readline = require('readline')
 
-const core = new Hypercore('./hypercore', options = {
+const core = new Hypercore('./hypercore/stack', options = {
     valueEncoding: 'json'
 })
 
