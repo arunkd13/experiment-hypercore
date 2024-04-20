@@ -11,7 +11,7 @@
             "skipFiles": [
                 "<node_internals>/**"
             ],
-            "program": "${workspaceFolder}\\queue-1.js",
+            "program": "${workspaceFolder}\\queue-2.js",
             "console": "integratedTerminal"
         }
     ]

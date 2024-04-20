@@ -1,4 +1,3 @@
-
 // See https://arunkd13.github.io/blog/datastructures-on-hypercore-queue/
 
 const Hypercore = require('hypercore')
@@ -60,26 +59,17 @@ async function enqueue(value) {
 }
 
 async function queueToString() {
-    var stack = ''
+    var s= ''
     for (i = 0; i < core.length; i++) {
-        stack += i + ': ' + JSON.stringify(await core.get(i)) + '\n'
+        s+= i + ': ' + JSON.stringify(await core.get(i)) + '\n'
     }
 
-    return stack
+    return s
 }
 
 async function ask() {
     rl.question(await queueToString() + "> ", async (answer) => {
         switch (answer) {
-            case 'head': {
-                var t = await headIndex();
-                if (t >=0) {
-                    console.log(await core.get(t))
-                } else {
-                    console.log('<empty>')
-                }
-                break;
-            }
             case 'dequeue': await dequeue(); break;
             default: await enqueue(answer); break;
         }
