@@ -1,3 +1,5 @@
+// See https://arunkd13.github.io/blog/datastructures-on-hypercore-stack/
+
 const Hypercore = require('hypercore')
 const readline = require('readline')
 
