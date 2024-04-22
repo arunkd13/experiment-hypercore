@@ -17,14 +17,10 @@ const rl = readline.createInterface({
 })
 
 async function headIndex() {
-    if (headCore.length <= 0) {
-        if (valueCore.length > 0) {
-            return 0;
-        } else {
-            return -1;
-        }
-    } else {
+    if (headCore.length > 0) {
         return await headCore.get(headCore.length - 1);
+    } else {
+        return -1;
     }
 }
 
@@ -46,6 +42,9 @@ async function dequeue() {
 
 async function enqueue(value) {
     await valueCore.append(value);
+    if (await headIndex() < 0) {
+        await headCore.append(valueCore.length - 1);
+    }
 }
 
 async function coreToString(core) {
